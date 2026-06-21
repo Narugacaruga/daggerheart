@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/Admin/Downloads/index.html -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daggerheart — Nhập môn cho người mới</title>
+<meta name="description" content="Trò chơi kể chuyện bằng xúc xắc. Tìm hiểu luật Hy Vọng và Sợ Hãi, rồi thử ngay một cuộc phiêu lưu nhỏ.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daggerheart — Nhập môn cho người mới">
+<meta property="og:description" content="Trò chơi kể chuyện bằng xúc xắc. Tìm hiểu luật Hy Vọng và Sợ Hãi, rồi thử ngay một cuộc phiêu lưu nhỏ.">
+<meta name="theme-color" content="#241C14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20viewBox=&#39;0%200%2032%2032&#39;%3E%3Cpolygon%20points=&#39;16,2%2029,9%2029,23%2016,30%203,23%203,9&#39;%20fill=&#39;%23C8901F&#39;/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Daggerheart — Nhập môn cho người mới_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EEDF; --paper-2:#FBF7EC; --card:#FFFDF6;
+    --ink:#241C14; --ink-soft:#5C5142; --line:#E4D8BE;
+    --hope:#C8901F; --hope-deep:#7A5610; --hope-soft:#F6E6BE;
+    --fear:#4A3E8C; --fear-deep:#2C2360; --fear-soft:#E0DAF4;
+    --maxw:880px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Be Vietnam Pro',sans-serif; font-weight:400; line-height:1.72;
+    font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px;}
+  h1,h2,h3{font-family:'Lora',serif; font-weight:600; line-height:1.2; margin:0;}
+  p{margin:0 0 1em;}
+  a{color:var(--fear-deep);}
+  .eyebrow{font-size:13px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--hope-deep); font-weight:600; margin:0 0 14px;}
+
+  /* hero */
+  .hero{position:relative; overflow:hidden; padding:64px 0 54px;
+    background:
+      radial-gradient(120% 90% at 18% 0%, rgba(200,144,31,.16), transparent 55%),
+      radial-gradient(120% 90% at 88% 12%, rgba(74,62,140,.18), transparent 55%);
+    border-bottom:1px solid var(--line);}
+  .hero h1{font-size:clamp(34px,7vw,58px); letter-spacing:-.01em;}
+  .hero h1 .amp{font-style:italic; color:var(--hope-deep);}
+  .hero .lede{font-size:clamp(18px,2.4vw,22px); color:var(--ink-soft);
+    max-width:34ch; margin:18px 0 0;}
+  .campaign{font-family:'Lora',serif; font-style:italic; font-size:16px;
+    color:var(--fear-deep); margin:26px 0 0;}
+  .dice-pair{display:flex; gap:18px; margin:0 0 30px;}
+  .d12{width:78px; height:78px; display:grid; place-items:center;
+    clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);
+    font-family:'Lora',serif; font-weight:700; font-size:30px; color:#fff;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.35);}
+  .d12.hope{background:var(--hope);}
+  .d12.fear{background:var(--fear);}
+  .die-col{display:flex; flex-direction:column; align-items:center; gap:7px;}
+  .die-cap{font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;}
+  .die-cap.h{color:var(--hope-deep);} .die-cap.f{color:var(--fear-deep);}
+
+  section{padding:54px 0;}
+  section + section{border-top:1px solid var(--line);}
+  h2{font-size:clamp(26px,4vw,36px); margin-bottom:8px;}
+  h3{font-size:20px; margin-bottom:6px;}
+  .sub{color:var(--ink-soft); max-width:60ch; margin-bottom:26px;}
+
+  .facet{display:inline-block; width:34px; height:3px; background:var(--hope);
+    margin-bottom:20px; transform:skewX(-30deg);}
+
+  /* role cards */
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .card{background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:22px 24px;}
+  .card h3{color:var(--fear-deep);}
+  .pill{display:inline-block; font-size:12px; font-weight:600; letter-spacing:.05em;
+    padding:3px 11px; border-radius:99px; margin-bottom:12px;}
+  .pill.gm{background:var(--fear-soft); color:var(--fear-deep);}
+  .pill.pl{background:var(--hope-soft); color:var(--hope-deep);}
+
+  /* big thesis quote */
+  .thesis{background:var(--ink); color:var(--paper-2); border-radius:18px;
+    padding:40px 38px; text-align:center;}
+  .thesis p{font-family:'Lora',serif; font-size:clamp(21px,3.2vw,29px);
+    line-height:1.45; margin:0; font-weight:500;}
+  .thesis .hl-h{color:var(--hope);} .thesis .hl-f{color:#a99cf0;}
+
+  /* hero classes chips */
+  .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px;}
+  .chip{border:1px solid var(--line); background:var(--paper-2);
+    border-radius:10px; padding:9px 14px; font-size:15px; font-weight:500;}
+  .chip i{color:var(--hope-deep); font-style:normal; font-weight:700; margin-right:7px;}
+
+  /* parallel callout */
+  .callout{border-left:4px solid var(--hope); background:var(--paper-2);
+    padding:16px 20px; border-radius:0 12px 12px 0; margin:22px 0;}
+  .callout strong{color:var(--hope-deep);}
+
+  /* four outcomes 2x2 */
+  .grid-out{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .out{border-radius:14px; padding:18px 20px; border:1px solid var(--line);}
+  .out .tag{font-family:'Lora',serif; font-weight:700; font-size:19px; display:block; margin-bottom:2px;}
+  .out .yn{font-size:13px; font-weight:600; letter-spacing:.04em; opacity:.85;}
+  .out.sh{background:var(--hope-soft);} .out.sh .tag,.out.sh .yn{color:var(--hope-deep);}
+  .out.sf{background:#efe9da;} .out.sf .tag,.out.sf .yn{color:#8a5a12;}
+  .out.fh{background:#eef0e6;} .out.fh .tag,.out.fh .yn{color:#4d6b1f;}
+  .out.ff{background:var(--fear-soft);} .out.ff .tag,.out.ff .yn{color:var(--fear-deep);}
+  .out p{margin:8px 0 0; font-size:15px; line-height:1.6;}
+
+  .example{background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:6px 24px 8px; margin-top:22px;}
+  .example .row{padding:16px 0; border-bottom:1px solid var(--line);}
+  .example .row:last-child{border-bottom:none;}
+  .example .row b{color:var(--fear-deep);}
+  .mini-dice{font-family:'Lora',serif; font-weight:700; font-size:13px;
+    color:#fff; padding:2px 8px; border-radius:6px; margin:0 2px;}
+  .mini-dice.h{background:var(--hope);} .mini-dice.f{background:var(--fear);}
+
+  /* steps */
+  ol.steps{list-style:none; counter-reset:s; padding:0; margin:0;}
+  ol.steps li{counter-increment:s; position:relative; padding:4px 0 22px 56px; }
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:0;
+    width:38px; height:38px; border-radius:10px; background:var(--fear);
+    color:#fff; font-family:'Lora',serif; font-weight:700; font-size:18px;
+    display:grid; place-items:center;}
+  ol.steps li::after{content:""; position:absolute; left:18px; top:42px; bottom:6px;
+    width:2px; background:var(--line);}
+  ol.steps li:last-child::after{display:none;}
+  ol.steps b{display:block; font-family:'Lora',serif; font-size:18px;
+    font-weight:600; color:var(--ink); margin-bottom:2px;}
+
+  .btn{display:inline-block; border:none; cursor:pointer; font-family:'Be Vietnam Pro';
+    font-weight:600; font-size:16px; border-radius:11px; padding:13px 24px;
+    background:var(--hope); color:#3a2607; transition:transform .08s, filter .15s;}
+  .btn:hover{filter:brightness(1.05);} .btn:active{transform:scale(.97);}
+  .btn.dark{background:var(--fear); color:#fff;}
+  .btn.ghost{background:transparent; border:1.5px solid var(--line); color:var(--ink);}
+  .btn:focus-visible{outline:3px solid var(--fear); outline-offset:2px;}
+  .web-link{margin-top:8px;}
+
+  /* simulator */
+  .sim{background:var(--ink); color:var(--paper-2); border-radius:20px;
+    padding:30px 30px 34px; margin-top:8px;}
+  .sim .scene-title{font-family:'Lora',serif; font-weight:700; color:var(--hope);
+    font-size:14px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px;}
+  .sim .scene-text{font-family:'Lora',serif; font-size:19px; line-height:1.55; margin:0 0 22px;}
+  .sim .choices{display:flex; flex-direction:column; gap:12px;}
+  .sim .choice{text-align:left; background:rgba(255,255,255,.06); color:var(--paper-2);
+    border:1px solid rgba(255,255,255,.14); border-radius:12px; padding:14px 18px;
+    cursor:pointer; font-family:'Be Vietnam Pro'; font-size:16px; font-weight:500;
+    transition:background .15s, border-color .15s;}
+  .sim .choice:hover{background:rgba(200,144,31,.18); border-color:var(--hope);}
+  .sim .choice .trait{display:block; font-size:13px; color:var(--hope); font-weight:600; margin-top:4px;}
+  .sim .choice:focus-visible{outline:3px solid var(--hope); outline-offset:2px;}
+
+  .meters{display:flex; gap:10px; margin-bottom:22px;}
+  .meter{flex:1; background:rgba(255,255,255,.06); border-radius:12px; padding:12px 14px;}
+  .meter .lab{font-size:12px; letter-spacing:.08em; text-transform:uppercase; opacity:.8;}
+  .meter .val{font-family:'Lora',serif; font-weight:700; font-size:26px; line-height:1;}
+  .meter.h .val{color:var(--hope);} .meter.f .val{color:#a99cf0;}
+
+  .roll-stage{text-align:center; padding:6px 0 2px;}
+  .roll-dice{display:flex; gap:20px; justify-content:center; margin:10px 0 6px; min-height:92px; align-items:center;}
+  .rd{width:84px; height:84px; display:grid; place-items:center;
+    clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);
+    font-family:'Lora',serif; font-weight:700; font-size:34px; color:#fff;}
+  .rd small{display:none;}
+  .rd.h{background:var(--hope);} .rd.f{background:var(--fear);}
+  .sim .die-cap.h{color:var(--hope);} .sim .die-cap.f{color:#a99cf0;}
+  .rd.rolling{animation:tumble .5s ease;}
+  @keyframes tumble{0%{transform:rotate(0) scale(1);}25%{transform:rotate(-14deg) scale(1.08);}
+    50%{transform:rotate(12deg) scale(.94);}75%{transform:rotate(-6deg) scale(1.05);}100%{transform:rotate(0) scale(1);}}
+  .total-line{font-family:'Lora',serif; font-size:20px; margin:6px 0 14px;}
+  .banner{border-radius:12px; padding:14px 18px; margin:4px 0 16px; font-weight:600;}
+  .banner.crit{background:linear-gradient(90deg,var(--hope),#e7c34f); color:#3a2607;}
+  .banner.sh{background:var(--hope); color:#3a2607;}
+  .banner.sf{background:#9a7a3a; color:#fff;}
+  .banner.fh{background:#6f8a3a; color:#fff;}
+  .banner.ff{background:var(--fear); color:#fff;}
+  .banner .ttl{font-family:'Lora',serif; font-size:18px; display:block;}
+  .result-text{font-family:'Lora',serif; font-size:18px; line-height:1.55; text-align:left; margin:0 0 18px;}
+
+  footer{background:var(--ink); color:var(--paper-2); text-align:center; padding:54px 22px 60px;}
+  footer h2{color:var(--paper-2); margin-bottom:12px;}
+  footer p{color:#cdbfa6; max-width:46ch; margin:0 auto 22px;}
+
+  @media(max-width:680px){
+    body{font-size:16px;}
+    .grid2,.grid-out{grid-template-columns:1fr;}
+    .sim,.thesis{padding:26px 20px;}
+    .dice-pair{gap:14px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;} .rd.rolling{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="dice-pair" aria-hidden="true">
+      <div class="die-col"><div class="d12 hope">8</div><span class="die-cap h">Hy vọng</span></div>
+      <div class="die-col"><div class="d12 fear">5</div><span class="die-cap f">Sợ hãi</span></div>
+    </div>
+    <p class="eyebrow">Daggerheart · Hướng dẫn cho người mới</p>
+    <h1>Một trò chơi kể chuyện<br>bằng <span class="amp">xúc xắc</span></h1>
+    <p class="lede">Không màn hình, không bàn cờ. Chỉ có cả nhóm, một người dẫn chuyện, và những viên xúc xắc quyết định số phận.</p>
+    <p class="campaign">Chiến dịch: Biên Niên Sử Rừng Gỗ Mun &amp; Lò Rèn Hình Học</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="facet" aria-hidden="true"></span>
+    <h2>Trò chơi này là gì?</h2>
+    <p class="sub">Hãy hình dung một câu chuyện phiêu lưu mà cả nhóm cùng viết nên ngay trong lúc chơi.</p>
+    <p>Daggerheart là một trò chơi nhập vai kể chuyện. Một người làm “người dẫn chuyện” (gọi tắt là GM) sẽ mô tả thế giới: rừng rậm, hang động, quái vật, những nhân vật bí ẩn. Những người còn lại mỗi người vào vai một anh hùng. GM kể tình huống, bạn nói nhân vật của mình muốn làm gì, rồi tung xúc xắc để xem điều đó có thành hay không. Từ kết quả đó, câu chuyện chảy tiếp.</p>
+    <p>Điều tuyệt nhất: không có “nút bấm có sẵn”. Bạn có thể thử bất cứ điều gì mình nghĩ ra, miễn là nói rõ với GM.</p>
+
+    <div class="callout">
+      <p style="margin:0;">Nếu bạn từng chơi <strong>Liên Quân Mobile</strong> hay <strong>Free Fire</strong>: ở đó bản đồ và luật là cố định, bạn chỉ làm được những gì máy cho phép. Daggerheart giống như chơi cùng những người bạn đó, nhưng bản đồ <strong>không có giới hạn</strong> và GM là một người thật, sẵn sàng phản ứng với mọi ý tưởng điên rồ của bạn.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="facet" aria-hidden="true"></span>
+    <h2>Ai làm gì?</h2>
+    <p class="sub">Chỉ có hai vai trò, rất dễ hiểu.</p>
+    <div class="grid2">
+      <div class="card">
+        <span class="pill gm">Người dẫn chuyện (GM)</span>
+        <h3>Người kể và trọng tài</h3>
+        <p style="margin:0;">GM dựng nên thế giới, đóng vai mọi nhân vật phụ và quái vật, mô tả chuyện gì đang xảy ra, và quyết định mỗi việc khó tới mức nào. GM không phải “đối thủ”, mà là người tạo ra thử thách để câu chuyện hấp dẫn. Trong nhóm này, GM là mình.</p>
+      </div>
+      <div class="card">
+        <span class="pill pl">Người chơi</span>
+        <h3>Các anh hùng</h3>
+        <p style="margin:0;">Mỗi người điều khiển một anh hùng của riêng mình. Bạn nói nhân vật cảm thấy gì, nói gì, làm gì. Khi muốn làm một việc có thể thành hoặc bại, bạn tung xúc xắc. Cả nhóm là một đội, cùng nhau vượt qua thử thách.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="thesis">
+      <p>Đây là câu chuyện <span class="hl-h">chúng ta cùng viết</span>, do GM dẫn dắt.<br>Bạn muốn làm gì? Cứ <span class="hl-h">nói ra</span>, rồi <span class="hl-f">tung xúc xắc</span> xem điều đó có thành hay không.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="facet" aria-hidden="true"></span>
+    <h2>Anh hùng của bạn</h2>
+    <p class="sub">Bạn không nhất thiết phải là người. Bạn chọn một anh hùng hợp với phong cách chơi của mình.</p>
+    <p>Anh hùng của bạn có thể thuộc nhiều giống loài khác nhau: con người, người lùn, người tinh (elf), và cả những giống loài kỳ lạ của Rừng Gỗ Mun. Mỗi anh hùng còn có một “lớp” (class), tức là vai trò trong nhóm, giống như khi bạn chọn loại tướng trong Liên Quân:</p>
+    <div class="chips">
+      <span class="chip"><i>⚔</i>Chiến binh cận chiến (đỡ đòn, lao vào đánh)</span>
+      <span class="chip"><i>✦</i>Pháp sư dùng phép thuật</span>
+      <span class="chip"><i>➶</i>Cung thủ, đánh từ xa</span>
+      <span class="chip"><i>✜</i>Người chữa trị, hỗ trợ đồng đội</span>
+      <span class="chip"><i>◔</i>Kẻ lén lút, ranh mãnh</span>
+    </div>
+    <div class="callout">
+      <p style="margin:0;">Giống như trong <strong>Genshin Impact</strong> mỗi nhân vật có một bộ chiêu và nguyên tố riêng, ở đây mỗi lớp có cách chơi riêng. Bạn chưa cần nhớ chi tiết bây giờ. Khi vào game, mình và “Cẩm nang” trên website sẽ giúp bạn chọn anh hùng chỉ trong vài phút.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="facet" aria-hidden="true"></span>
+    <h2>Xúc xắc Hy Vọng &amp; Sợ Hãi</h2>
+    <p class="sub">Đây là trái tim của trò chơi, và là điểm khiến Daggerheart khác biệt.</p>
+    <p>Mỗi khi làm một việc có thể thành hoặc bại, bạn tung <b>hai viên xúc xắc 12 mặt</b> cùng lúc. Một viên là <b style="color:var(--hope-deep)">Hy Vọng</b>, một viên là <b style="color:var(--fear-deep)">Sợ Hãi</b> (hai màu khác nhau cho dễ phân biệt). Bạn cộng hai số lại, cộng thêm chỉ số của anh hùng, rồi so với “độ khó” mà GM đặt ra.</p>
+    <p>Có hai câu hỏi cùng được trả lời trong một lần tung:</p>
+    <p style="margin-bottom:6px;">1. <b>Tổng có đạt độ khó không?</b> Đạt thì thành công, không đạt thì thất bại.<br>2. <b>Viên nào cao hơn?</b> Hy Vọng cao hơn thì kết quả nghiêng về phía bạn; Sợ Hãi cao hơn thì GM được lợi thế để khiến mọi thứ gay cấn hơn.</p>
+    <p>Ghép hai câu hỏi đó lại, ta có bốn kết quả. Mẹo nhớ rất dễ:</p>
+
+    <div class="grid-out">
+      <div class="out sh">
+        <span class="tag">Thành công với Hy Vọng</span>
+        <span class="yn">“Được, và...”</span>
+        <p>Bạn làm được việc, lại còn nhận thêm 1 điểm Hy Vọng để dùng sau.</p>
+      </div>
+      <div class="out sf">
+        <span class="tag">Thành công với Sợ Hãi</span>
+        <span class="yn">“Được, nhưng...”</span>
+        <p>Bạn làm được, nhưng có một cái giá hoặc rắc rối đi kèm, và GM nhận 1 điểm Sợ Hãi.</p>
+      </div>
+      <div class="out fh">
+        <span class="tag">Thất bại với Hy Vọng</span>
+        <span class="yn">“Không, nhưng...”</span>
+        <p>Việc không thành, nhưng hậu quả nhẹ thôi, và bạn vẫn nhận 1 điểm Hy Vọng.</p>
+      </div>
+      <div class="out ff">
+        <span class="tag">Thất bại với Sợ Hãi</span>
+        <span class="yn">“Không, và...”</span>
+        <p>Việc không thành và mọi thứ còn xấu đi, GM nhận 1 điểm Sợ Hãi.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;"><b>Chí Mạng:</b> nếu hai viên ra <b>cùng một số</b> (ví dụ 7 và 7), bạn được “Chí Mạng”. Tự động thành công rực rỡ, nhận 1 Hy Vọng và xóa bớt mệt mỏi. Giống cảm giác ra đòn chí mạng đúng lúc trong game vậy.</p>
+
+    <h3 style="margin-top:30px;">Ví dụ cụ thể</h3>
+    <p class="sub" style="margin-bottom:6px;">Tình huống: bạn muốn nhảy qua một khe núi. GM đặt độ khó là 12. Anh hùng của bạn có chỉ số +2.</p>
+    <div class="example">
+      <div class="row">Tung <span class="mini-dice h">8</span> Hy Vọng và <span class="mini-dice f">5</span> Sợ Hãi, cộng +2 thành <b>15</b>. Đạt 12 và Hy Vọng cao hơn. <b>Thành công với Hy Vọng:</b> bạn nhảy qua gọn gàng và nhận 1 Hy Vọng.</div>
+      <div class="row">Tung <span class="mini-dice h">4</span> Hy Vọng và <span class="mini-dice f">9</span> Sợ Hãi, cộng +2 thành <b>15</b>. Vẫn đạt 12 nhưng Sợ Hãi cao hơn. <b>Thành công với Sợ Hãi:</b> bạn qua được, nhưng một tảng đá lăn xuống chặn mất đường về, và GM nhận 1 Sợ Hãi.</div>
+      <div class="row">Tung <span class="mini-dice h">6</span> Hy Vọng và <span class="mini-dice f">3</span> Sợ Hãi, cộng +2 thành <b>11</b>. Không đạt 12, Hy Vọng cao hơn. <b>Thất bại với Hy Vọng:</b> bạn hụt chân nhưng kịp bám vào mép đá, và vẫn nhận 1 Hy Vọng.</div>
+      <div class="row">Tung <span class="mini-dice h">2</span> Hy Vọng và <span class="mini-dice f">7</span> Sợ Hãi, cộng +2 thành <b>11</b>. Không đạt, Sợ Hãi cao hơn. <b>Thất bại với Sợ Hãi:</b> bạn trượt ngã xuống khe, tình huống xấu đi, và GM nhận 1 Sợ Hãi.</div>
+    </div>
+
+    <div class="callout" style="margin-top:24px;">
+      <p style="margin:0;"><strong>Điểm Hy Vọng và Sợ Hãi để làm gì?</strong> Hãy coi chúng như “năng lượng” trong game. Bạn dùng Hy Vọng để tung thêm xúc xắc giúp đồng đội, để bật kỹ năng đặc biệt của anh hùng. Còn GM dùng Sợ Hãi để tung chiêu của quái vật, để đẩy nhịp truyện lên cao trào. Càng chơi, hai bên càng giằng co, và đó chính là cái hay.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="facet" aria-hidden="true"></span>
+    <h2>Vào game qua website</h2>
+    <p class="sub">Mọi thứ bạn cần (nhân vật, thẻ bài, bản đồ, cẩm nang) đều nằm trên website của chiến dịch. Chỉ vài bước là xong.</p>
+    <ol class="steps">
+      <li><b>Tạo tài khoản</b>Bấm “Đăng ký” và tạo tài khoản riêng cho bạn.</li>
+      <li><b>Tham gia chiến dịch</b>Vào mục “Tham gia chiến dịch” và chọn Rừng Gỗ Mun.</li>
+      <li><b>Chờ GM duyệt</b>Mình sẽ nhận được yêu cầu và duyệt cho bạn vào nhóm.</li>
+      <li><b>Mở phiếu nhân vật</b>Sau khi được duyệt, bạn xem phiếu anh hùng, chọn thẻ bài lĩnh vực, và theo dõi Hy Vọng, Máu, Căng thẳng ngay trên đó.</li>
+      <li><b>Đọc Cẩm nang</b>Mở “Cẩm nang” và bản đồ để nắm thế giới, nhân vật và những nơi bạn sắp tới.</li>
+    </ol>
+    <a class="btn dark web-link" href="https://your-campaign-site.example/" target="_blank" rel="noopener">Mở website chiến dịch</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="facet" aria-hidden="true"></span>
+    <h2>Thử ngay: một cuộc phiêu lưu nhỏ</h2>
+    <p class="sub">Đọc tình huống, chọn việc bạn muốn làm, rồi tung xúc xắc Song Hành để xem chuyện gì xảy ra. Đây đúng là cách chơi thật, chỉ ngắn hơn.</p>
+
+    <div class="sim" id="sim" aria-live="polite">
+      <div class="meters">
+        <div class="meter h"><div class="lab">Hy vọng của bạn</div><div class="val" id="m-hope">2</div></div>
+        <div class="meter f"><div class="lab">Sợ hãi của GM</div><div class="val" id="m-fear">0</div></div>
+      </div>
+      <div id="sim-body"><div class="scene-title">Màn 1 · Bìa Rừng Gỗ Mun</div><p class="scene-text">Bạn tỉnh dậy bên bìa Rừng Gỗ Mun, đầu còn ong ong. Xa xa trong rừng, một ánh lửa lò rèn lập lòe màu tím lạ thường: Lò Rèn Hình Học trong truyền thuyết. Bỗng “rắc”, một cành cây gãy ngay sau lưng. Có thứ gì đó đang quan sát bạn.</p><div class="choices"><button class="choice" data-i="0">Nín thở, nhìn trộm qua bụi cây xem đó là gì.<span class="trait">Dùng chỉ số: Bản năng +2  ·  Độ khó 10</span></button><button class="choice" data-i="1">Đứng dậy, lên tiếng chào thật dõng dạc.<span class="trait">Dùng chỉ số: Khí chất +1  ·  Độ khó 12</span></button></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>Sẵn sàng viết câu chuyện của riêng mình?</h2>
+    <p>Bạn không cần biết trước gì cả. Cứ tới, chọn một anh hùng, và cùng cả nhóm bước vào Rừng Gỗ Mun.</p>
+    <a class="btn" href="file:///C:/Users/Admin/Downloads/index.html#sim">Chơi thử lại cuộc phiêu lưu</a>
+  </div>
+</footer>
+
+<script>
+  var state = { hope: 2, fear: 0, scene: "start", pending: null };
+
+  var scenes = {
+    start: {
+      title: "Màn 1 · Bìa Rừng Gỗ Mun",
+      text: "Bạn tỉnh dậy bên bìa Rừng Gỗ Mun, đầu còn ong ong. Xa xa trong rừng, một ánh lửa lò rèn lập lòe màu tím lạ thường: Lò Rèn Hình Học trong truyền thuyết. Bỗng “rắc”, một cành cây gãy ngay sau lưng. Có thứ gì đó đang quan sát bạn.",
+      choices: [
+        { label: "Nín thở, nhìn trộm qua bụi cây xem đó là gì.", trait: "Bản năng +2", mod: 2, diff: 10,
+          success: "Bạn lặng lẽ vén lá. Một con cáo lông bạc to như con chó đang ngắm bạn bằng đôi mắt tinh anh. Nó không tấn công, mà hất đầu về phía ánh lửa tím như muốn dẫn đường.",
+          fail: "Bạn lỡ giẫm phải cành khô. “Rắc!” Con cáo lông bạc giật mình phóng vụt đi, nhưng vẫn ngoái lại nhìn bạn rồi lao về phía ánh lửa tím.",
+          next: "forge" },
+        { label: "Đứng dậy, lên tiếng chào thật dõng dạc.", trait: "Khí chất +1", mod: 1, diff: 12,
+          success: "“Ai đó?” bạn gọi. Từ trong bóng tối, một con cáo lông bạc bước ra, nghiêng đầu. Giọng bạn tự tin khiến nó thấy bạn không nguy hiểm. Nó quay về phía ánh lửa tím, mời bạn đi theo.",
+          fail: "Giọng bạn vang to hơn dự định rồi lạc đi vì hồi hộp. Có tiếng chân thú chạy mất. Bạn chỉ kịp thấy một cái đuôi bạc lướt về phía ánh lửa tím.",
+          next: "forge" }
+      ]
+    },
+    forge: {
+      title: "Màn 2 · Lò Rèn Hình Học",
+      text: "Lần theo ánh sáng, bạn tới một khoảng rừng thưa. Giữa đó là Lò Rèn Hình Học: một khối đá khổng lồ nhiều mặt, cạnh phát sáng tím, lơ lửng xoay tròn trong không trung. Trên bệ đá có một mảnh kim loại hình tam giác đang ngân nga khe khẽ, như muốn được cầm lên. Nhưng luồng năng lượng quanh lò rèn rất mạnh.",
+      choices: [
+        { label: "Thò tay nhanh gọn chộp lấy mảnh kim loại.", trait: "Nhanh nhẹn +2", mod: 2, diff: 13,
+          success: "Tay bạn lướt qua luồng năng lượng và nắm gọn mảnh kim loại. Nó ấm và rung nhẹ trong lòng bàn tay như một trái tim tí hon. Lò Rèn khẽ ngân lên một nốt nhạc, như đang chào đón bạn.",
+          fail: "Luồng năng lượng tím quật vào tay bạn nhói buốt, mảnh kim loại rơi leng keng. Nhưng con cáo bạc lao tới ngoạm lấy rồi đặt vào lòng bạn, mắt ánh lên tinh nghịch.",
+          next: "end" },
+        { label: "Quan sát các mặt sáng, tìm nhịp an toàn rồi mới ra tay.", trait: "Trí tuệ +2", mod: 2, diff: 11,
+          success: "Bạn nhận ra các mặt đá sáng lên theo một nhịp đều. Đợi đúng lúc luồng năng lượng dịu xuống, bạn nhẹ nhàng nhặt mảnh kim loại. Hoàn hảo. Lò Rèn ngân nga tán thưởng.",
+          fail: "Bạn mải tính nhịp mà quên mất thời gian. Một mặt đá bất ngờ sáng rực, đẩy bạn ngã ngửa. May thay, con cáo bạc đã kịp tha mảnh kim loại đặt bên cạnh bạn.",
+          next: "end" }
+      ]
+    },
+    end: {
+      title: "Màn cuối · Khởi đầu của bạn",
+      ending: true,
+      text: "Mảnh kim loại trong tay bạn ấm dần, khắc lên da một hoa văn hình học mờ ảo. Đó là dấu hiệu: hành trình của bạn ở Rừng Gỗ Mun chỉ vừa bắt đầu. Con cáo bạc ngồi xuống bên cạnh, chờ đợi. Bước tiếp theo, bạn sẽ tự viết, cùng cả nhóm và người dẫn chuyện."
+    }
+  };
+
+  function el(id){ return document.getElementById(id); }
+  function updateMeters(){ el("m-hope").textContent = state.hope; el("m-fear").textContent = state.fear; }
+
+  function renderScene(){
+    var s = scenes[state.scene];
+    var body = el("sim-body");
+    state.pending = null;
+    if (s.ending){
+      var msg = "Bạn kết thúc màn thử với <b style='color:var(--hope)'>" + state.hope +
+        " Hy Vọng</b>, còn GM có <b style='color:#a99cf0'>" + state.fear + " Sợ Hãi</b>. " +
+        "Trong ván thật, Hy Vọng giúp bạn làm điều phi thường, còn Sợ Hãi để GM khiến mọi thứ gay cấn hơn.";
+      body.innerHTML =
+        '<div class="scene-title">' + s.title + '</div>' +
+        '<p class="scene-text">' + s.text + '</p>' +
+        '<p class="result-text">' + msg + '</p>' +
+        '<button class="btn" id="replay">Chơi lại từ đầu</button>';
+      el("replay").addEventListener("click", resetGame);
+      return;
+    }
+    var html = '<div class="scene-title">' + s.title + '</div>' +
+      '<p class="scene-text">' + s.text + '</p>' +
+      '<div class="choices">';
+    for (var i = 0; i < s.choices.length; i++){
+      var c = s.choices[i];
+      html += '<button class="choice" data-i="' + i + '">' + c.label +
+        '<span class="trait">Dùng chỉ số: ' + c.trait + '  ·  Độ khó ' + c.diff + '</span></button>';
+    }
+    html += '</div>';
+    body.innerHTML = html;
+    var btns = body.querySelectorAll(".choice");
+    for (var j = 0; j < btns.length; j++){
+      btns[j].addEventListener("click", function(){ chooseAction(parseInt(this.getAttribute("data-i"), 10)); });
+    }
+  }
+
+  function chooseAction(i){
+    var c = scenes[state.scene].choices[i];
+    state.pending = c;
+    var body = el("sim-body");
+    body.innerHTML =
+      '<div class="scene-title">Bạn đã chọn</div>' +
+      '<p class="scene-text" style="font-size:17px;">“' + c.label + '”</p>' +
+      '<div class="roll-stage">' +
+        '<div class="roll-dice">' +
+        '<div class="die-col"><div class="rd h" id="die-h">?</div><span class="die-cap h">Hy vọng</span></div>' +
+        '<div class="die-col"><div class="rd f" id="die-f">?</div><span class="die-cap f">Sợ hãi</span></div></div>' +
+        '<button class="btn" id="rollbtn">Tung Xúc Xắc Song Hành</button>' +
+      '</div>';
+    el("rollbtn").addEventListener("click", rollDice);
+  }
+
+  function rollDice(){
+    var c = state.pending;
+    var hope = 1 + Math.floor(Math.random() * 12);
+    var fear = 1 + Math.floor(Math.random() * 12);
+    var total = hope + fear + c.mod;
+    var dieH = el("die-h"), dieF = el("die-f");
+    dieH.classList.add("rolling"); dieF.classList.add("rolling");
+
+    setTimeout(function(){
+      dieH.textContent = hope;
+      dieF.textContent = fear;
+      dieH.classList.remove("rolling"); dieF.classList.remove("rolling");
+
+      var crit = (hope === fear);
+      var withHope = (hope > fear);
+      var success = (total >= c.diff);
+      var cls, ttl, tone, story;
+
+      if (crit){
+        cls = "crit"; ttl = "Chí Mạng!"; tone = "Hai viên cùng số, thành công rực rỡ.";
+        story = c.success + " Đòn này quá đẹp, bạn nhận thêm 1 Hy Vọng và thấy khỏe khoắn hẳn lên.";
+        state.hope = Math.min(6, state.hope + 1);
+      } else if (success && withHope){
+        cls = "sh"; ttl = "Thành công với Hy Vọng"; tone = "Được, và... (bạn nhận 1 Hy Vọng)";
+        story = c.success; state.hope = Math.min(6, state.hope + 1);
+      } else if (success && !withHope){
+        cls = "sf"; ttl = "Thành công với Sợ Hãi"; tone = "Được, nhưng... (GM nhận 1 Sợ Hãi)";
+        story = c.success + " Tuy nhiên bạn cảm thấy có điều gì đó vừa thay đổi trong rừng, GM nhận 1 Sợ Hãi.";
+        state.fear = state.fear + 1;
+      } else if (!success && withHope){
+        cls = "fh"; ttl = "Thất bại với Hy Vọng"; tone = "Không, nhưng... (bạn nhận 1 Hy Vọng)";
+        story = c.fail; state.hope = Math.min(6, state.hope + 1);
+      } else {
+        cls = "ff"; ttl = "Thất bại với Sợ Hãi"; tone = "Không, và... (GM nhận 1 Sợ Hãi)";
+        story = c.fail + " Bóng tối trong rừng như đặc lại, GM nhận 1 Sợ Hãi.";
+        state.fear = state.fear + 1;
+      }
+      updateMeters();
+
+      var body = el("sim-body");
+      var extra = document.createElement("div");
+      extra.innerHTML =
+        '<p class="total-line">Tổng: ' + hope + ' + ' + fear + ' + ' + c.mod + ' = <b>' + total + '</b> (độ khó ' + c.diff + ')</p>' +
+        '<div class="banner ' + cls + '"><span class="ttl">' + ttl + '</span>' + tone + '</div>' +
+        '<p class="result-text">' + story + '</p>' +
+        '<button class="btn dark" id="nextbtn">Đi tiếp</button>';
+      body.querySelector(".roll-stage").appendChild(extra);
+      el("rollbtn").style.display = "none";
+      el("nextbtn").addEventListener("click", function(){ state.scene = c.next; renderScene(); });
+    }, 520);
+  }
+
+  function resetGame(){
+    state.hope = 2; state.fear = 0; state.scene = "start"; state.pending = null;
+    updateMeters(); renderScene();
+  }
+
+  updateMeters();
+  renderScene();
+</script>
+
+
+</body></html>
